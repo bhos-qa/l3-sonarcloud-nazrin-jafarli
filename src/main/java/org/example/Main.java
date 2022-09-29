@@ -1,10 +1,7 @@
 package org.example;
-
-
 enum PermissionLevel {
     ADMIN, DEVELOPER, USER;
 }
-
 public class Main {
     private PermissionLevel mLevel = PermissionLevel.USER;
 
