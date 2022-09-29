@@ -28,8 +28,8 @@ jacoco {
 
 jacocoTestReport {
     reports {
-        xml.enabled=true
-        csv.enabled=false
+        xml.enabled true
+        csv.enabled false
     }
 }
 
