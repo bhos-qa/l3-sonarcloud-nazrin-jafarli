@@ -1,9 +1,9 @@
 name: Workflow
 on:
   push:
-    branches: ['develop']
+    branches: ['feature/lab3']
   pull_request:
-    branches: ['develop']
+    branches: ['feature/lab3']
 jobs:
   build:
     name: Build
