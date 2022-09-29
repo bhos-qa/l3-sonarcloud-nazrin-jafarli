@@ -1,45 +1,23 @@
 package org.example;
 
+
+enum PermissionLevel {
+    ADMIN, DEVELOPER, USER;
+}
+
 public class Main {
+    private PermissionLevel mLevel = PermissionLevel.USER;
 
-    enum PermissionLevel {
-        ADMIN,
-        DEVELOPER,
-        USER
+    public PermissionLevel setLevel(PermissionLevel level) {
+        this.mLevel = level;
+        return this.mLevel;
     }
 
-    ;
-
-    public static class PermissionManager {
-        private PermissionLevel mLevel = PermissionLevel.USER;
-
-        public String getCurrentLevel() {
-            switch (this.mLevel) {
-                case USER:
-                    return "USER";
-                case ADMIN:
-                    return "ADMIN";
-                case DEVELOPER:
-                    return "DEVELOPER";
-                default:
-                    break;
-            }
-            return null;
-
-        }
-
-        public void setCurrentLevel(PermissionLevel level) {
-            this.mLevel = level;
-        }
-    }
-
-    public static void main(String[] args) {
-        PermissionManager pm = new PermissionManager();
-        System.out.println(pm.getCurrentLevel());
-        pm.setCurrentLevel(PermissionLevel.ADMIN);
-        System.out.println(pm.getCurrentLevel());
-        pm.setCurrentLevel(PermissionLevel.USER);
-        System.out.println(pm.getCurrentLevel());
-        pm.setCurrentLevel(PermissionLevel.DEVELOPER);
+    public String getLevel() {
+        return switch (this.mLevel) {
+            case USER -> "USER";
+            case DEVELOPER -> "DEVELOPER";
+            case ADMIN -> "ADMIN";
+        };
     }
 }
