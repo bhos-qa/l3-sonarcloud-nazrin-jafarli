@@ -2,9 +2,9 @@ name: Gradle Build & Test
 
 on:
   push:
-    branches: [ "develop"]
+    branches: [ "develop","feature/lab3"]
   pull_request:
-    branches: [ "develop"]
+    branches: [ "develop","feature/lab3"]
 
 jobs:
   build:
